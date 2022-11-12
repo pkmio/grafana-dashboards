@@ -22,6 +22,20 @@
   "liveNow": false,
   "panels": [
     {
+      "collapsed": false,
+      "datasource": "$datasource",
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "panels": [],
+      "title": "Current Requests",
+      "type": "row"
+    },
+    {
       "datasource": "$datasource",
       "description": "cpu requests / total cluster cpu by namespace",
       "fieldConfig": {
@@ -44,14 +58,18 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 0
+        "y": 1
       },
       "id": 2,
       "interval": "60s",
       "options": {
         "legend": {
           "displayMode": "list",
-          "placement": "right"
+          "placement": "right",
+          "values": [
+            "percent",
+            "value"
+          ]
         },
         "pieType": "pie",
         "reduceOptions": {
@@ -98,10 +116,10 @@
       "gridPos": {
         "h": 9,
         "w": 12,
-        "x": 0,
-        "y": 0
+        "x": 13,
+        "y": 1
       },
-      "id": 2,
+      "id": 3,
       "interval": "60s",
       "options": {
         "displayLabels": [],
@@ -137,6 +155,20 @@
       "type": "piechart"
     },
     {
+      "collapsed": false,
+      "datasource": "$datasource",
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 10
+      },
+      "id": 1,
+      "panels": [],
+      "title": "Weekly Summations",
+      "type": "row"
+    },
+    {
       "datasource": "$datasource",
       "description": "week summation of: cpu requests / total cluster cpu by namespace",
       "fieldConfig": {
@@ -159,9 +191,9 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 0
+        "y": 11
       },
-      "id": 2,
+      "id": 4,
       "interval": "600s",
       "options": {
         "legend": {
@@ -217,10 +249,10 @@
       "gridPos": {
         "h": 9,
         "w": 12,
-        "x": 0,
-        "y": 0
+        "x": 13,
+        "y": 11
       },
-      "id": 2,
+      "id": 5,
       "interval": "600s",
       "options": {
         "legend": {
