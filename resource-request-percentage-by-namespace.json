@@ -68,32 +68,16 @@
       },
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
           "expr": "(sum by (namespace) (eagle_pod_container_resource_requests_cpu_cores{phase=\"Running\"}) / ignoring(namespace) group_left sum(eagle_node_resource_allocatable_cpu_cores)) * 100",
           "range": true,
           "refId": "A"
-        },
-        {
-          "datasource": {
-            "type": "__expr__",
-            "uid": "__expr__"
-          },
-          "hide": false,
-          "refId": "B",
-          "type": "math"
         }
       ],
       "title": "Cpu Requests By Namespace",
       "type": "piechart"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
+      "datasource": "$datasource",
       "description": "memory requests / total cluster cpu by namespace",
       "fieldConfig": {
         "defaults": {
@@ -144,10 +128,6 @@
       },
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
           "expr": "(sum by (namespace) (eagle_pod_container_resource_requests_memory_bytes{phase=\"Running\"}) / ignoring(namespace) group_left sum(eagle_node_resource_allocatable_memory_bytes)) * 100\n",
           "range": true,
           "refId": "A"
@@ -157,10 +137,7 @@
       "type": "piechart"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
+      "datasource": "$datasource",
       "description": "week summation of: cpu requests / total cluster cpu by namespace",
       "fieldConfig": {
         "defaults": {
@@ -210,10 +187,6 @@
       },
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
           "expr": "(sum(sum_over_time(eagle_pod_container_resource_requests_cpu_cores{namespace=~\".+\", phase=\"Running\"}[7d])) by (namespace) / ignoring(namespace) group_left sum(sum_over_time(eagle_node_resource_allocatable_cpu_cores[7d]))) * 100",
           "range": true,
           "refId": "A"
@@ -223,10 +196,7 @@
       "type": "piechart"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
+      "datasource": "$datasource",
       "description": "week summation of: memory requests / total cluster memory by namespace",
       "fieldConfig": {
         "defaults": {
@@ -276,10 +246,6 @@
       },
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
           "expr": "(sum(sum_over_time(eagle_pod_container_resource_requests_memory_bytes{namespace=~\".+\", phase=\"Running\"}[7d])) by (namespace) / ignoring(namespace) group_left sum(sum_over_time(eagle_node_resource_allocatable_memory_bytes[7d]))) * 100\n",
           "range": true,
           "refId": "A"
