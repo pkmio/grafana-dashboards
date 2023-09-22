@@ -661,7 +661,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(rate(sidekiq_queue_latency_seconds[1m]))",
+          "expr": "rate(sidekiq_queue_latency_seconds[1m])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{name}}",
@@ -764,7 +764,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(sidekiq_queue_enqueued_jobs)",
+          "expr": "sidekiq_queue_enqueued_jobs",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{name}}",
